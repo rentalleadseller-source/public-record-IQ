@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Public Record Insights — Fast & Secure</title>
+<style>
+:root {
+  --primary: #059669; /* green accent */
+  --primary-hover: #047857;
+  --text-dark: #111827;
+  --text-muted: #4b5563;
+  --bg-light: #f9fafb;
+  --card-bg: #ffffff;
+  --radius: 14px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--bg-light);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 720px;
+  width: 92%;
+  padding: 32px 28px 38px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary);
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.lead {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+}
+
+.meter {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  background: #f3f4f6;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  display: inline-block;
+}
+
+ul {
+  text-align: left;
+  display: inline-block;
+  margin: 18px 0 24px;
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  background: #f9fafb;
+  border-left: 4px solid var(--primary);
+  padding: 9px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+li.dont-back {
+  background: #ecfdf5;
+  border-left: 4px solid var(--primary);
+  color: #065f46;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+  padding: 12px 14px;
+  box-shadow: 0 2px 8px rgba(5,150,105,0.1);
+  transition: all 0.25s ease;
+}
+
+li.dont-back:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 10px rgba(5,150,105,0.15);
+}
+
+.back-highlight {
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.cta {
+  display: inline-block;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5,150,105,0.2);
+}
+
+.trust {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+/* Spinner */
+#spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* Congrats animation with new color */
+.lead.congrats {
+  color: #1d4ed8; /* bright blue */
+  font-weight: bold;
+  font-size: 1.2rem;
+  animation: popIn 0.5s ease-out;
+}
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Vertical reviews */
+.reviews {
+  margin-top: 36px;
+  text-align: center;
+}
+.reviews h2 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+#review-box {
+  background: #f3f4f6;
+  color: var(--text-dark);
+  border-radius: 12px;
+  padding: 18px 20px;
+  max-width: 620px;
+  margin: 0 auto;
+  min-height: 120px;
+  transition: all 0.6s ease;
+}
+#review-box.fade {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.stars {
+  color: #fbbf24;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}
+#review-box p { font-size: 0.96rem; line-height: 1.5; margin-bottom: 6px; }
+#review-box .name { font-weight: 600; color: #4b5563; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🔍 Public Record Insights</h1>
+<p id="geo" class="lead">Checking Your Eligibility... <span id="spinner">⏳</span></p>
+<div class="meter">🟢 Instantly search public and background records</div>
+
+<ul>
+<li>📑 Access public and background information</li>
+<li>🔒 Privacy-first, secure redirect</li>
+<li>⚡ Fast search, no delays</li>
+<li class="dont-back">🕵 Don't press <span class="back-highlight">BACK</span> until you see your report</li>
+</ul>
+
+<a href="https://spikemycreditscore.com/?mbi=330553202#" 
+class="cta" target="_blank" rel="noopener sponsored">
+➡️ Check Your Public Background Report
+</a>
+
+<div class="trust">🔒 SSL Secured • 🌐 Independent • 🚀 Transparency First</div>
+
+<!-- Vertical reviews section -->
+<div class="reviews">
+<h2>Recent User Feedback 😊</h2>
+<div id="review-box" class="review active">
+<div class="stars">⭐⭐⭐⭐⭐ (5.0)</div>
+<p>Loading latest reviews...</p>
+<div class="name">— Verified User</div>
+</div>
+</div>
+</div>
+
+<script>
+// Eligibility spinner -> professional congrats
+setTimeout(() => {
+  const geoEl = document.getElementById('geo');
+  geoEl.innerHTML = `🎉 Congratulations! You are eligible for your public record check ✅`;
+  geoEl.classList.add('congrats');
+}, 2000);
+
+// Vertical auto-sliding reviews
+const reviewsData = [
+  {stars:"⭐⭐⭐⭐⭐ (5.0)",text:"Super easy to check records — details were clear and accurate 😄",name:"— Amanda L., Texas"},
+  {stars:"⭐⭐⭐⭐⭐ (4.9)",text:"Quick and reliable. Definitely recommend 👍",name:"— Jason T., Florida"},
+  {stars:"⭐⭐⭐⭐⭐ (4.8)",text:"Gave me instant peace of mind 😊",name:"— Rachel M., Ohio"},
+  {stars:"⭐⭐⭐⭐⭐ (5.0)",text:"Clean interface, fast results 🔒",name:"— Kevin D., California"},
+  {stars:"⭐⭐⭐⭐⭐ (4.9)",text:"Makes background checks simple and reliable 😍",name:"— Priya S., New York"},
+  {stars:"⭐⭐⭐⭐⭐ (4.7)",text:"Accurate info every time ⏱️",name:"— Daniel R., Illinois"}
+];
+
+const box = document.getElementById('review-box');
+let idx = 0;
+reviewsData.sort(() => Math.random() - 0.5);
+
+function showNextReview() {
+  const review = reviewsData[idx];
+  box.classList.add('fade');
+  setTimeout(() => {
+    box.innerHTML = `<div class="stars">${review.stars}</div>
+                     <p>${review.text}</p>
+                     <div class="name">${review.name}</div>`;
+    box.classList.remove('fade');
+  }, 500);
+  idx = (idx + 1) % reviewsData.length;
+}
+
+setInterval(showNextReview, 4000);
+showNextReview();
+</script>
+</body>
+</html>
