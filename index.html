@@ -232,16 +232,15 @@ footer {
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // Get user IP from ipify
-  fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
+  // Fetch user location via IP
+  fetch('https://ipapi.co/json/')
+    .then(res => res.json())
     .then(data => {
       const geoEl = document.getElementById('geo');
-      geoEl.innerHTML = `🎉 Congrats! You are eligible from ${data.ip}`;
+      geoEl.innerHTML = `🎉 Congrats! You are eligible from ${data.city}, ${data.region}, ${data.country_name}`;
       geoEl.classList.add('congrats');
     })
     .catch(() => {
-      // fallback if IP fetch fails
       const geoEl = document.getElementById('geo');
       geoEl.innerHTML = `🎉 Congrats! You are eligible`;
       geoEl.classList.add('congrats');
@@ -260,6 +259,25 @@ document.addEventListener("DOMContentLoaded", function() {
   const box = document.getElementById('review-box');
   let idx = 0;
   reviewsData.sort(() => Math.random() - 0.5);
+
+  function showNextReview() {
+    const review = reviewsData[idx];
+    box.classList.add('fade');
+    setTimeout(() => {
+      box.innerHTML = `<div class="stars">${review.stars}</div>
+                       <p>${review.text}</p>
+                       <div class="name">${review.name}</div>`;
+      box.classList.remove('fade');
+    }, 500);
+    idx = (idx + 1) % reviewsData.length;
+  }
+
+  setInterval(showNextReview, 4000);
+  showNextReview();
+});
+</script>
+</body>
+</html>
 
   function showNextReview() {
     const review = reviewsData[idx];
