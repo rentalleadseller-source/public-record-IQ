@@ -3,110 +3,111 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Public Record Insights — Cyber Edition</title>
+<title>Public Record Insights — Business Edition</title>
 
 <style>
 :root{
-  --violet:#7b5cff;
-  --aqua:#41e6c9;
-  --dark:#0d0f17;
-  --light:#b7b9c7;
-  --glass:rgba(255,255,255,0.08);
+  --primary:#1a73e8;      /* Business blue */
+  --primary-dark:#1558b0;
+  --accent:#0cc0a0;       /* Professional teal */
+  --bg:#f5f7fa;           /* Clean light background */
+  --text:#1a1a1a;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --border:#e5e7eb;
 }
 
 body{
   margin:0;
   font-family:Inter, sans-serif;
-  background:linear-gradient(135deg,var(--dark),#1b1e2b);
-  color:#fff;
+  background:var(--bg);
+  color:var(--text);
   text-align:center;
 }
 
-header{ padding:35px 0 10px; }
+header{ padding:35px 0 15px; }
 .logo{
-  font-size:1.9rem; font-weight:700; letter-spacing:1px;
-  background:linear-gradient(90deg,var(--violet),var(--aqua));
+  font-size:2rem; font-weight:700; letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
   -webkit-background-clip:text; color:transparent;
 }
 
 .card{
   max-width:720px; margin:0 auto; padding:35px 25px;
-  border-radius:18px; background:var(--glass);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.1);
-  box-shadow:0 0 40px rgba(0,0,0,0.3);
+  border-radius:14px; background:var(--card);
+  border:1px solid var(--border);
+  box-shadow:0 4px 25px rgba(0,0,0,0.06);
 }
 
 .lead{
-  color:var(--light); font-size:1rem;
+  color:var(--muted); font-size:1rem;
   margin-bottom:20px; transition:.4s;
 }
 .lead.ok{
   font-size:1.3rem; font-weight:600;
-  color:var(--aqua);
-  text-shadow:0 0 8px rgba(65,230,201,0.6);
+  color:var(--primary-dark);
 }
 
 .meter{
-  background:rgba(123,92,255,0.15);
-  border-left:4px solid var(--violet);
-  padding:12px 16px; border-radius:10px;
+  background:#eaf1ff;
+  border-left:4px solid var(--primary);
+  padding:12px 16px; border-radius:8px;
   font-weight:500; margin:18px auto 25px;
 }
 
 ul{ padding:0; list-style:none; margin:0; }
 li{
-  background:rgba(255,255,255,0.05);
-  border-left:4px solid var(--aqua);
-  padding:12px 14px; border-radius:10px;
+  background:#f0f4ff;
+  border-left:4px solid var(--accent);
+  padding:12px 14px; border-radius:8px;
   margin-bottom:10px; text-align:left;
+  color:#1a1a1a;
 }
 .dont-back{
   text-align:center; font-weight:700;
-  border-left:4px solid var(--violet);
-  background:rgba(123,92,255,0.18);
+  border-left:4px solid var(--primary-dark);
+  background:#e2e8ff;
 }
-.back-em{ color:#ff7070; }
+.back-em{ color:#c62828; }
 
 .cta{
   display:inline-block; margin-top:20px;
   padding:14px 28px;
-  background:linear-gradient(90deg,var(--aqua),var(--violet));
-  text-decoration:none; color:#0d0f17;
-  font-weight:700; border-radius:12px;
+  background:linear-gradient(90deg,var(--primary),var(--primary-dark));
+  text-decoration:none; color:#fff;
+  font-weight:600; border-radius:10px;
   font-size:1.05rem;
-  box-shadow:0 6px 25px rgba(123,92,255,0.35);
   transition:.25s;
 }
 .cta:hover{
   transform:translateY(-3px);
-  box-shadow:0 6px 30px rgba(65,230,201,0.35);
+  background:linear-gradient(90deg,var(--primary-dark),var(--primary));
 }
 
-.trust{ margin-top:18px; font-size:.85rem; color:var(--light); }
+.trust{ margin-top:18px; font-size:.85rem; color:var(--muted); }
 
 .reviews{ margin-top:40px; }
 .reviews h2{
   font-size:1.3rem;
-  background:linear-gradient(90deg,var(--violet),var(--aqua));
+  background:linear-gradient(90deg,var(--primary),var(--accent));
   -webkit-background-clip:text;
   color:transparent;
 }
 
 #review-box{
-  padding:20px; background:rgba(255,255,255,0.06);
-  border-radius:14px; min-height:120px;
+  padding:20px; background:#f8faff;
+  border-radius:12px; min-height:120px;
   transition:.4s;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid var(--border);
 }
 .fade{ opacity:0; transform:translateY(8px); }
 
-.stars{ color:#ffd859; margin-bottom:6px; }
-.name{ color:var(--light); font-size:.9rem; }
+.stars{ color:#e0a800; margin-bottom:6px; }
+.name{ color:var(--muted); font-size:.9rem; }
 
 footer{
   margin:40px 0 20px;
-  font-size:.8rem; color:var(--light);
+  font-size:.8rem; color:var(--muted);
 }
 </style>
 </head>
@@ -119,27 +120,23 @@ footer{
 
 <div class="card">
 
-  <!-- LOCATION SECTION -->
   <p id="geo" class="lead">Checking your eligibility...</p>
 
   <div class="meter">🟢 Instant public & background record search</div>
 
   <ul>
     <li>📑 Access public + background records</li>
-    <li>🔒 Secure, encrypted results</li>
-    <li>⚡ Instant processing</li>
-    <li class="dont-back">🕵 For accurate processing, please avoid using the <span class="back-em">BACK</span> button until your check is complete.</li>
+    <li>🔒 Secure & encrypted results</li>
+    <li>⚡ Fast & automated processing</li>
+    <li class="dont-back">🕵 For accurate processing, please avoid using the <span class="back-em">BACK</span> button.</li>
   </ul>
 
-  <a class="cta"
-     href="https://afflat3a2.com/trk/lnk/BC873D0C-00DD-4E9B-8DEF-1E3F9A990FD2/?o=24933&c=918277&a=712815&k=7A1DF23FCB26932E1504627918574318&l=26023&s1=1325=N-SAS-Peter"
-     target="_blank" rel="noopener sponsored">
+  <a class="cta" href="#" target="_blank" rel="noopener sponsored">
      ➜ Check Background Report
   </a>
 
-  <div class="trust">🔒 SSL • 🌐 Independent • ⚡ Fast Results</div>
+  <div class="trust">🔒 SSL Secured • 🌐 Independent • ⚡ Fast Results</div>
 
-  <!-- REVIEWS -->
   <div class="reviews">
     <h2>Recent Feedback</h2>
     <div id="review-box">
@@ -153,7 +150,6 @@ footer{
 <footer>© 2025 Public Record Insights</footer>
 
 <script>
-// GEO LOCATION DISPLAY
 document.addEventListener("DOMContentLoaded", () => {
   const geoEl = document.getElementById("geo");
 
@@ -173,13 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// REVIEW ROTATION
 const reviews=[
- {s:"⭐⭐⭐⭐⭐",t:"Fast, accurate and clean UI.",n:"— Amanda"},
- {s:"⭐⭐⭐⭐⭐",t:"Got results instantly!",n:"— Jason"},
- {s:"⭐⭐⭐⭐⭐",t:"Secure and easy to use.",n:"— Rachel"},
- {s:"⭐⭐⭐⭐⭐",t:"Love the neon vibe 🔥",n:"— Kevin"},
- {s:"⭐⭐⭐⭐",t:"Reliable + trustworthy.",n:"— Priya"}
+ {s:"⭐⭐⭐⭐⭐",t:"Professional and reliable.",n:"— Amanda"},
+ {s:"⭐⭐⭐⭐⭐",t:"Results delivered instantly.",n:"— Jason"},
+ {s:"⭐⭐⭐⭐⭐",t:"Very easy to use.",n:"— Rachel"},
+ {s:"⭐⭐⭐⭐⭐",t:"Clean business layout.",n:"— Kevin"},
+ {s:"⭐⭐⭐⭐",t:"Accurate and trustworthy service.",n:"— Priya"}
 ];
 
 reviews.sort(()=>Math.random()-0.5);
